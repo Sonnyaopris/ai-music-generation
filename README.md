@@ -1,88 +1,87 @@
-# ai-music-generation
-Music composition using LSTM, RNN, CNN on MIDI and FMA datasets
+Compoziție Automată de Muzică folosind LSTM, CNN și RNN
+Acest repository conține două module principale:
 
-Automatic Music Composition using LSTM, CNN, and RNN
-This repository contains two main modules:
+Generare muzică MIDI folosind rețele LSTM.
 
-MIDI music generation using LSTM networks
+Generare muzică audio pe baza coeficienților MFCC cu RNN.
 
-Audio music generation using MFCC coefficients with RNN
-
-Repository Structure
+Structura Repository-ului
 -folder-
-├── mfcc_fma_proiect_psv.ipynb        # Audio generation based on MFCC coefficients
-├── midi_AI_generare_muzica.ipynb     # Symbolic music generation (MIDI) with LSTM
-└── README.md                         # This file
+├── mfcc_fma_proiect_psv.ipynb        # Generare muzică audio pe baza de coeficienți MFCC
+├── midi_AI_generare_muzica.ipynb     # Generare muzică simbolică (MIDI) cu LSTM
+└── README.md                         # Acest fișier
+
+Cerințe:
+-Python 3.8+
+
+-Google Colab / Jupyter Notebook
+
+-Biblioteci Python: pip install tensorflow numpy pandas music21 pretty_midi librosa matplotlib scikit-learn pyfluidsynth
+sudo apt-get install fluidsynth 
 
 
-Requirements
-Python 3.8+
+- Utilizare-
 
-Google Colab or Jupyter Notebook
+ midi_AI_generare_muzica.ipynb — Generare pe bază de MIDI
+Descriere:
+Antrenează un model LSTM pe secvențe de note extrase din fișiere MIDI și generează noi compoziții în funcție de genul selectat.
 
-Python libraries:
-pip install tensorflow numpy pandas music21 pretty_midi librosa matplotlib scikit-learn pyfluidsynth
-and:
-sudo apt-get install fluidsynth
+Pași:
 
-Usage Instructions
-midi_AI_generare_muzica.ipynb – MIDI-Based Generation
-Description:
-Trains an LSTM model on note sequences extracted from MIDI files and generates new compositions based on the selected musical genre.
+1.Fișierele MIDI au fost organizate manual pe genuri în directorul /data/midi/.
 
-Steps:
+2.Rulează notebook-ul pas cu pas:
 
-MIDI files were manually organized into genre folders in /data/midi/.
+      Preprocesare MIDI
 
-Run the notebook step-by-step:
+      Antrenare model LSTM
 
-MIDI Preprocessing
+      Generare de secvențe noi
 
-LSTM Model Training
+3.Output:
 
-Sequence Generation
+    Fișier .mid generat automat
 
-Output:
+    Conversie în .wav folosind FluidSynth
 
-Automatically generated .mid file
+4.Vizualizare:
 
-Converted to .wav using FluidSynth
+   Spectograma fragmentului generat
 
-Visualization:
 
-Spectrogram of the generated sequence
+mfcc_fma_proiect_psv.ipynb — Generare pe bază de MFCC (Audio)
 
-mfcc_fma_proiect_psv.ipynb – MFCC-Based Audio Generation
-Description:
-Trains a simple RNN to generate audio using MFCC coefficients extracted from music fragments.
+Descriere:
+Antrenează o rețea RNN simplă pentru generare audio folosind coeficienți MFCC extrași din fragmente muzicale.
 
-Steps:
+Pași:
 
-Uses the FMA Small dataset, available at:
+1. Baza de date FMA Small a fost folosită. Aceasta poate fi descărcată de la:
 https://github.com/mdeff/fma
 
-Run the notebook:
+2.Rulează notebook-ul:
 
-MFCC Extraction
+     Extracție MFCC
 
-LSTM Model Training
+     Antrenare model LSTM
 
-Generation of new MFCC sequences
+     Generare de secvențe MFCC noi
 
-Output:
+3.Output:
 
-Reconstructed .wav audio file from the generated MFCC
+     Reconstrucție fișier audio .wav din MFCC generați
 
-Visualization:
+4.Vizualizare:
 
-Spectrogram of the generated audio
+     Spectograma audio generată
 
- Dataset Sources
+
+Surse Baze de Date
 FMA Small Dataset: https://github.com/mdeff/fma
 
-MIDI Collection: Manually curated MIDI files from public resources, categorized by musical genre
+Baza MIDI: organizată manual, fișiere selectate din resurse publice, organizate pe genuri muzicale.
 
-Author
+Autor
 Opriș Sonnya-Mariana
-Technical University of Cluj-Napoca
-Faculty of Electronics, Telecommunications and Information Technology
+Universitatea Tehnică din Cluj-Napoca
+Facultatea de Electronică, Telecomunicații și Tehnologia Informației
