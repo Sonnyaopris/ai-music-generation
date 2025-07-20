@@ -1,0 +1,76 @@
+
+Automatic Music Composition using LSTM, CNN, and RNN
+====================================================
+
+This repository contains two main modules:
+
+- MIDI music generation using LSTM networks.
+- Audio music generation based on MFCC coefficients with RNN.
+
+Repository Structure
+--------------------
+-folder-
+├── mfcc_fma_proiect_psv.ipynb        # Audio music generation using MFCC coefficients
+├── midi_AI_generare_muzica.ipynb     # Symbolic (MIDI) music generation using LSTM
+└── README.md                         # This file
+
+Requirements
+------------
+- Python 3.8+
+- Google Colab / Jupyter Notebook
+- Python libraries:
+  pip install tensorflow numpy pandas music21 pretty_midi librosa matplotlib scikit-learn pyfluidsynth
+  sudo apt-get install fluidsynth
+
+Usage
+-----
+
+midi_AI_generare_muzica.ipynb — MIDI-based generation
+-----------------------------------------------------
+Description:
+Trains an LSTM model on sequences of notes extracted from MIDI files and generates new compositions based on the selected genre.
+
+Steps:
+1. The MIDI files were manually organized by genre in the /data/midi/ directory.
+2. Run the notebook step by step:
+   - MIDI preprocessing
+   - LSTM model training
+   - New sequence generation
+
+3. Output:
+   - Automatically generated .mid file
+   - Converted to .wav using FluidSynth
+
+4. Visualization:
+   - Spectrogram of the generated fragment
+
+mfcc_fma_proiect_psv.ipynb — MFCC-based generation (Audio)
+----------------------------------------------------------
+Description:
+Trains a simple RNN network to generate audio based on MFCC coefficients extracted from music fragments.
+
+Steps:
+1. The FMA Small dataset was used. It can be downloaded from:
+   https://github.com/mdeff/fma
+
+2. Run the notebook:
+   - MFCC extraction
+   - LSTM model training
+   - Generation of new MFCC sequences
+
+3. Output:
+   - Reconstructed .wav audio file from the generated MFCCs
+
+4. Visualization:
+   - Spectrogram of the generated audio
+
+Dataset Sources
+---------------
+- FMA Small Dataset: https://github.com/mdeff/fma
+- MIDI dataset: manually curated and organized by genre using publicly available files
+
+Author
+------
+Opriș Sonnya-Mariana
+Technical University of Cluj-Napoca
+Faculty of Electronics, Telecommunications and Information Technology
